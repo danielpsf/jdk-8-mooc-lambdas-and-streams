@@ -1,0 +1,12 @@
+subprojects {
+    apply plugin: 'java'
+    apply plugin: "eclipse"
+
+    repositories {
+        jcenter()
+    }
+
+    eclipse.project {
+        natures 'org.eclipse.buildship.core.gradleprojectnature'
+    }
+}
