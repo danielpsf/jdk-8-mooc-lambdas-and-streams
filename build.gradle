@@ -1,12 +1,27 @@
 subprojects {
     apply plugin: 'java'
     apply plugin: "eclipse"
+    apply plugin: "groovy"
 
     repositories {
-        jcenter()
+        mavenCentral()
     }
 
     eclipse.project {
-        natures 'org.eclipse.buildship.core.gradleprojectnature'
+        natures = [
+            'org.eclipse.buildship.core.gradleprojectnature',
+            "org.eclipse.jdt.core.javanature"
+            "org.eclipse.jdt.groovy.core.groovyNature"
+        ]
+    }
+    
+    dependencies {
+        // mandatory dependencies for using Spock
+        compile     "org.codehaus.groovy:groovy-all:2.4.6"
+        testCompile "org.spockframework:spock-core:1.1-groovy-2.4-rc-3"
+        
+        // optional dependencies for using Spock
+        testRuntime "cglib:cglib-nodep:3.2.4"
+        testRuntime "org.objenesis:objenesis:2.5.1"
     }
 }
