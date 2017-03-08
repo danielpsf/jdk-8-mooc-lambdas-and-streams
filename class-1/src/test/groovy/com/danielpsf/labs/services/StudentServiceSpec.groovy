@@ -12,12 +12,12 @@ class StudentServiceSpec extends Specification {
 		StudentService service = new StudentService();
 		
 		expect:
-		service.getBetterStudentOfTheYear(students) == result
+		service.getBetterScoreOfTheYear(students, year) == result
 		
 		where:
-		students                                                                                                | result
-		[new Student("Daniel", 9.8, 2015), new Student("Juliana", 9.9, 2015), new Student("Luke", 10.0, 2013)]  | 9.9
-		[new Student("Fries", 10.0, 2015), new Student("Petty", 9.9, 2015), new Student("Bread", 9.8, 2015)]    | 10
+		students                                                                                                | year | result
+		[new Student("Daniel", 9.8, 2015), new Student("Juliana", 9.9, 2015), new Student("Luke", 10.0, 2013)]  | 2015 | 9.9
+		[new Student("Fries", 10.0, 2015), new Student("Petty", 9.9, 2015), new Student("Bread", 9.8, 2013)]    | 2013 | 9.8
 		
 	}
 	
