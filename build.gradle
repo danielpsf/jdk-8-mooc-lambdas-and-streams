@@ -10,7 +10,7 @@ subprojects {
     eclipse.project {
         natures = [
             'org.eclipse.buildship.core.gradleprojectnature',
-            "org.eclipse.jdt.core.javanature"
+            "org.eclipse.jdt.core.javanature",
             "org.eclipse.jdt.groovy.core.groovyNature"
         ]
     }
